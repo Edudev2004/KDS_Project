@@ -7,10 +7,8 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     const btnText = document.getElementById('btnText');
     const loader = document.getElementById('loader');
 
-    // Ocultar mensaje de error previo
     errorDiv.classList.remove('show');
 
-    // Mostrar loader
     btnText.style.display = 'none';
     loader.style.display = 'inline';
 
@@ -44,7 +42,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
             }));
 
             // Redirigir al dashboard
-            window.location.href = 'dashboard/admin.html';
+            window.location.href = '../html/dashboard/dashboard.html';
 
         } else {
             throw new Error('Usuario o contraseña incorrectos');
@@ -56,7 +54,6 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         errorDiv.classList.add('show');
 
     } finally {
-        // Ocultar loader
         btnText.style.display = 'inline';
         loader.style.display = 'none';
     }
