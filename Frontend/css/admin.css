@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
     --blanco: #fff6ff;
@@ -20,19 +20,18 @@ body {
     overflow-x: hidden;
 }
 
-section {
-    position: relative;
-    width: 100%;
-}
-
+/* ===== Sidebar ===== */
 .nav {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 300px;
     height: 100%;
     background: var(--color-1);
     border-left: 10px solid var(--color-1);
-    overflow: hidden;
     transition: 0.4s;
+    overflow: hidden;
+    z-index: 100;
 }
 
 .nav.active {
@@ -48,7 +47,7 @@ section {
 
 .nav ul li {
     position: relative;
-    width: 200%;
+    width: 100%;
     list-style: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -59,17 +58,13 @@ section {
     background: var(--blanco);
 }
 
-.nav ul li:nth-child(1) {
-    margin-bottom: 40px;
-    pointer-events: none;
-}
-
 .nav ul li a {
-    position: relative;
     display: flex;
-    width: 100%;
+    align-items: center;
     color: var(--blanco);
     text-decoration: none;
+    padding: 15px;
+    transition: 0.3s;
 }
 
 .nav ul li:hover a,
@@ -78,27 +73,34 @@ section {
 }
 
 .nav ul li a .icono {
-    position: relative;
-    display: block;
     min-width: 60px;
-    line-height: 75px;
     text-align: center;
-}
-
-.nav ul li a .icono ion-icon {
     font-size: 1.75rem;
 }
 
 .nav ul li a .titulo {
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-    text-align: start;
     white-space: nowrap;
+    font-size: 1rem;
 }
 
+.nav ul li:first-child {
+    background: transparent !important;
+    cursor: default;
+}
+
+.nav ul li:first-child:hover {
+    background: transparent !important;
+}
+
+.nav ul li:first-child a {
+    cursor: default;
+}
+
+.nav ul li:first-child:hover a {
+    color: var(--blanco) !important;
+}
+
+/* ===== Contenido principal ===== */
 .container {
     position: absolute;
     left: 300px;
@@ -113,38 +115,44 @@ section {
     width: calc(100% - 80px);
 }
 
+/* ===== Topbar ===== */
 .container .topbar {
     width: 100%;
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 20px;
+    background: var(--blanco);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 .container .topbar .toogle {
-    position: relative;
     width: 60px;
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    color: var(--black);
 }
 
 .container .topbar .buscar {
     position: relative;
     width: 400px;
-    margin: 0 10px;
+    max-width: 100%;
 }
 
 .container .topbar .buscar label {
-    position: relative;
     width: 100%;
+    position: relative;
 }
 
-.container .topbar .buscar label input {
+.container .topbar .buscar input {
     width: 100%;
     height: 40px;
     border-radius: 40px;
@@ -155,15 +163,16 @@ section {
     border: 1px solid var(--color-2);
 }
 
-.container .topbar .buscar label ion-icon {
+.container .topbar .buscar ion-icon {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 10px;
+    transform: translateY(-50%);
     font-size: 1.2rem;
+    color: var(--color-2);
 }
 
 .container .topbar .perfil-usuario {
-    position: relative;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -172,87 +181,80 @@ section {
 }
 
 .container .topbar .perfil-usuario img {
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* ===== Cards ===== */
 .cards {
-    position: relative;
-    width: 100%;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+    grid-gap: 20px;
 }
 
 .cards .card {
-    position: relative;
     background: var(--blanco);
-    padding: 30px;
+    padding: 25px;
+    border-radius: 15px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 20px;
+    transition: 0.3s;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
-    transition: 0.4s;
+    align-items: center;
 }
 
 .cards .card:hover {
     background: var(--color-1);
+    color: var(--blanco);
 }
 
 .cards .card .card-numeros {
-    position: relative;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--color-1);
 }
 
+.cards .card:hover .card-numeros {
+    color: var(--blanco);
+}
+
 .cards .card .card-nombre {
-    position: relative;
-    font-size: 1.1em;
+    font-size: 1rem;
     margin-top: 5px;
-    margin-right: 80px;
 }
 
 .cards .card .card-icono {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: var(--color-2);
 }
 
-.cards .card:hover .card-numeros,
-.cards .card:hover .card-nombre,
 .cards .card:hover .card-icono {
     color: var(--blanco);
 }
 
+/* ===== Detalles ===== */
 .detalles {
-    position: relative;
-    width: 100%;
     padding: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-gap: 30px;
-    margin-top: 10px;
+    grid-gap: 20px;
 }
 
 .detalles .ordenes-recientes,
 .detalles .nuevos-clientes {
-    position: relative;
-    display: grid;
-    min-height: 500px;
     background: var(--blanco);
     padding: 20px;
+    border-radius: 15px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 20px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .header h2 {
@@ -262,23 +264,18 @@ section {
 
 .boton {
     text-decoration: none;
-    position: relative;
     padding: 5px 10px;
     background: var(--color-1);
     color: var(--blanco);
     border-radius: 5px;
 }
 
+/* Tabla Órdenes */
 .detalles table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
     text-align: left;
-}
-
-.detalles .ordenes-recientes table tr {
-    color: var(--black);
-    border-radius: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .detalles .ordenes-recientes table tr:hover {
@@ -287,26 +284,26 @@ section {
 }
 
 .detalles .ordenes-recientes table th,
-.detalles .ordenes-recientes table tr td {
+.detalles .ordenes-recientes table td {
     padding: 10px;
 }
 
 .detalles .ordenes-recientes table th:last-child,
-.detalles .ordenes-recientes table tr td:last-child {
+.detalles .ordenes-recientes table td:last-child {
     text-align: end;
 }
 
 .detalles .ordenes-recientes table th:nth-child(3),
-.detalles .ordenes-recientes table tr td:nth-child(3) {
+.detalles .ordenes-recientes table td:nth-child(3) {
     text-align: center;
 }
 
+/* Estados */
 .estatus {
     padding: 2px 10px;
-    color: var(--blanco);
     border-radius: 4px;
-    font-size: 1em;
-    font-weight: 700;
+    font-size: 0.9em;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
@@ -335,8 +332,8 @@ section {
     color: #00cc4f;
 }
 
+/* Nuevos clientes */
 .detalles .nuevos-clientes .imgBox {
-    position: relative;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -344,9 +341,6 @@ section {
 }
 
 .detalles .nuevos-clientes .imgBox img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -357,29 +351,11 @@ section {
     color: var(--blanco);
 }
 
-.detalles .nuevos-clientes table tr td:nth-child(1) {
-    width: 60px;
-}
-
-.detalles .nuevos-clientes table tr td {
+.detalles .nuevos-clientes table td {
     padding: 12px 10px;
 }
 
-.detalles .nuevos-clientes table tr:hover td a {
-    color: var(--blanco);
-}
-
-
-/* Responsive */
-
-/* Pantallas largas */
-@media only screen and (min-width: 1200px) {
-    .cards {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Laptops */
+/* ===== Responsive ===== */
 @media only screen and (max-width: 992px) {
     .nav {
         left: -300px;
@@ -400,64 +376,22 @@ section {
     }
 }
 
-/* Tablets */
 @media only screen and (max-width: 768px) {
-    .detalles {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .ordenes-recientes,
-    .nuevos-clientes {
-        overflow-x: auto;
-    }
-
-    .estatus.preparacion {
-        white-space: nowrap;
-    }
-}
-
-/* Celulares */
-@media only screen and (max-width: 480px) {
-    .nav {
-        width: 100%;
-        left: -100%;
-        z-index: 1000;
-    }
-
-    .nav.active {
-        left: 0;
-        width: 100%;
-    }
-
-    .container.active .toogle {
-        color: var(--blanco);
-    }
-
-    .toogle {
-        position: fixed;
-        left: initial;
-        right: 0;
-        z-index: 10000;
-    }
-
     .cards {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .perfil-usuario {
-        min-width: 40px;
-    }
-
-    .header h2 {
-        font-size: 1.2em;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .detalles {
         grid-template-columns: 1fr;
     }
+}
 
-    .detalles .nuevos-clientes table tr td a {
-        font-size: 1em;
-        margin-right: 5px;
+@media only screen and (max-width: 480px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .container .topbar .buscar {
+        display: none;
     }
 }

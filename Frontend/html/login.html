@@ -11,23 +11,32 @@
 
 <body>
   <div class="login-container">
-    <form action="">
+    <form id="loginForm">
       <h1>Login - KDS</h1>
+
       <div class="input-box">
-        <input type="text" placeholder="Usuario" required>
-        <i class='bxr  bx-user'></i>
+        <input type="text" id="usuario" placeholder="Usuario" required>
+        <i class='bxr bx-user'></i>
       </div>
 
       <div class="input-box">
-        <input type="password" placeholder="Contraseña" required>
-        <i class='bx  bx-lock'></i>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <i class='bx bx-lock'></i>
+      </div>
+
+      <!-- Mensaje de error -->
+      <div id="errorMessage" class="error-message"></div>
+
+      <div>
+        <button type="submit" class="btn" id="loginBtn">
+          <span id="btnText">Iniciar Sesión</span>
+          <span id="loader" style="display: none;">🔄 Cargando...</span>
+        </button>
+      </div>
     </form>
-
-    <div>
-      <button class="btn">Iniciar Sesión</button>
-    </div>
-
   </div>
 </body>
+
+<script src="../js/login.js"></script>
 
 </html>

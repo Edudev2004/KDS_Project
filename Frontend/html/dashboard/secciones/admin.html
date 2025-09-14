@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - KDS</title>
+    <link rel="stylesheet" href="../../../css/admin.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icono"><ion-icon name="restaurant"></ion-icon></span>
+                    <span class="titulo">El Rincón del Sabor</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icono"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="titulo">Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icono"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="titulo">Usuario</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icono"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="titulo">Configuración</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icono"><ion-icon name="bar-chart-outline"></ion-icon></span>
+                    <span class="titulo">Reportes</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="toogle">
+                <ion-icon name="menu"></ion-icon>
+            </div>
+            <div class="buscar">
+                <label>
+                    <input type="text" placeholder="Buscar...">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+            <div class="perfil-usuario">
+                <img src="../../../assets/user.png" alt="perfil">
+            </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="cards">
+            <div class="card">
+                <div>
+                    <div class="card-numeros">150</div>
+                    <div class="card-nombre">Usuarios</div>
+                </div>
+                <div class="card-icono">
+                    <ion-icon name="people-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-numeros">30</div>
+                    <div class="card-nombre">Pedidos</div>
+                </div>
+                <div class="card-icono">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-numeros">12</div>
+                    <div class="card-nombre">Reportes</div>
+                </div>
+                <div class="card-icono">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-numeros">5</div>
+                    <div class="card-nombre">Nuevos</div>
+                </div>
+                <div class="card-icono">
+                    <ion-icon name="star-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secciones -->
+        <div class="detalles">
+            <div class="ordenes-recientes">
+                <div class="header">
+                    <h2>Órdenes Recientes</h2>
+                    <a href="#" class="boton">Ver todo</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Pedido</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rommel</td>
+                            <td> Pedido #001 </td>
+                            <td><span class="estatus pendiente">Pendiente</span></td>
+                            <td><a href="#">Ver</a></td>
+                        </tr>
+                        <tr>
+                            <td>Sara</td>
+                            <td> Pedido #002 </td>
+                            <td><span class="estatus listo">Listo</span></td>
+                            <td><a href="#">Ver</a></td>
+                        </tr>
+                        <tr>
+                            <td>Lucía</td>
+                            <td> Pedido #003 </td>
+                            <td><span class="estatus entregado">Entregado</span></td>
+                            <td><a href="#">Ver</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="nuevos-clientes">
+                <div class="header">
+                    <h2>Nuevos Clientes</h2>
+                </div>
+                <table>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBox"><img src="../../../assets/user.png"></div>
+                        </td>
+                        <td>
+                            <h4>Mario Diaz</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBox"><img src="../../../assets/user.png"></div>
+                        </td>
+                        <td>
+                            <h4>Ana Campos</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBox"><img src="../../../assets/user.png"></div>
+                        </td>
+                        <td>
+                            <h4>Laura Bozo</h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+<script src="../../../js/admin.js"></script>
+
+</html>
